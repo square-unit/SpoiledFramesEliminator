@@ -1,0 +1,11 @@
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\bin\Debug\netcoreapp2.0\SpoiledFramesEliminator.deps.json
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\bin\Debug\netcoreapp2.0\SpoiledFramesEliminator.runtimeconfig.json
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\bin\Debug\netcoreapp2.0\SpoiledFramesEliminator.runtimeconfig.dev.json
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\bin\Debug\netcoreapp2.0\SpoiledFramesEliminator.dll
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\bin\Debug\netcoreapp2.0\SpoiledFramesEliminator.pdb
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\obj\Debug\netcoreapp2.0\SpoiledFramesEliminator.csprojAssemblyReference.cache
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\obj\Debug\netcoreapp2.0\SpoiledFramesEliminator.csproj.CoreCompileInputs.cache
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\obj\Debug\netcoreapp2.0\SpoiledFramesEliminator.AssemblyInfoInputs.cache
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\obj\Debug\netcoreapp2.0\SpoiledFramesEliminator.AssemblyInfo.cs
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\obj\Debug\netcoreapp2.0\SpoiledFramesEliminator.dll
+C:\Users\jetbrains\source\repos\SpoiledFramesEliminator\SpoiledFramesEliminator\obj\Debug\netcoreapp2.0\SpoiledFramesEliminator.pdb
