@@ -11,14 +11,22 @@ namespace SpoiledFramesEliminator
 	        //var pathParameter = args[0];
 	        var pathParameter = @".\..\TestFolder";
 
-			//call something to get the list of JPEG and RAW files
-			Search searching = new Search(pathParameter);
+			//make an instance of the folder's state
+			AllTheFiles currentDir = new AllTheFiles(pathParameter);
+	        
+	        currentDir.Get2ListsByFileTypes();
+	        
+	        currentDir.PrintOutTestData();
+	        
+	        
 
 	        //call smthng to remove RAW files
 
 			//write a message
-
 	        
+	        
+
+	        Console.ReadLine();
         }
 	    
 	}
