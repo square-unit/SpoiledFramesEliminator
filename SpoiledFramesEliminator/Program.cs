@@ -1,39 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace SpoiledFramesEliminator
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-	        //take parameter(s)
-	        //var pathParameter = args[0];
-	        var pathParameter = @".\..\TestFolder";
-	        List<string> RawFilesToDelete = new List<string>();
+            //var pathParameter = @".\..\TestFolder";
+            var pathParameter = Environment.CurrentDirectory;
+            
 
-			//make an instance of the folder's state
-			AllTheFiles currentDir = new AllTheFiles(pathParameter);
-	        
-	        currentDir.Get2ListsByFileTypes();
-	        
-	        currentDir.TrimTheLists();
-	        
-	        currentDir.PrintOutTestData();
-	        
-	        RawFilesToDelete = currentDir.GetRawFilesToDelete();
+            //make an instance of the folder's state
+            var currentDir = new AllTheFiles(pathParameter);
 
-	        Eliminate.Remove(RawFilesToDelete);
+            currentDir.Get2ListsByFileTypes();
 
-	        //call smthng to remove RAW files
+            currentDir.TrimTheLists();
 
-			//write a message
+            currentDir.PrintOutTestData();
 
-	        Console.ReadLine();
+            var rawFilesToDelete = currentDir.GetRawFilesToDelete();
+
+            Eliminate.Remove(rawFilesToDelete);
+
+            Console.ReadLine();
         }
-	    
-	}
-
-
+    }
 }

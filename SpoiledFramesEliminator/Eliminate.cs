@@ -2,18 +2,13 @@
 using System.IO;
 
 namespace SpoiledFramesEliminator
-{   
-    //takes a list of jpg and raw files, generates a list of raw files to remove, removes them
-    public class Eliminate
+{
+    //removes them
+    public static class Eliminate
     {
         public static void Remove(List<string> FilesToRemove)
         {
-            foreach (string f in FilesToRemove)
-            {
-                File.Delete(f);
-            }
+            foreach (var f in FilesToRemove) File.Delete(f);
         }
-        
-        
     }
 }

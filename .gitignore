@@ -1,2 +1,6 @@
 /.vs/*
 /.idea/*
+/SpoiledFramesEliminator/obj/*
+/SpoiledFramesEliminator/bin/*
+/SpoiledFramesEliminator/obj/
+/SpoiledFramesEliminator/bin/
