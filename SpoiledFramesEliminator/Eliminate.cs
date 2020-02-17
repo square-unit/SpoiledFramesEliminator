@@ -6,9 +6,9 @@ namespace SpoiledFramesEliminator
     //removes them
     public static class Eliminate
     {
-        public static void Remove(List<string> FilesToRemove)
+        public static void Remove(List<string> filesToRemove)
         {
-            foreach (var f in FilesToRemove) File.Delete(f);
+            foreach (var f in filesToRemove) File.Delete(f);
         }
     }
 }

@@ -10,11 +10,11 @@ namespace SpoiledFramesEliminator
         private readonly string[] _lossyFileExtensions = {".JPG", ".JPEG"};
 
         private readonly string[] _rawFileExtensions = {".DNG", ".CR3", ".CR2", ".RAF", ".NEF"};
-        private string ActualLossyExtension;
-        private string ActualRawExtension;
-        private readonly List<string> lossyFilesList = new List<string>();
-        private readonly List<string> rawFilesList = new List<string>();
-        private readonly List<string> rawFilesMissingItsLossyCopies = new List<string>();
+        private string _actualLossyExtension;
+        private string _actualRawExtension;
+        private readonly List<string> _lossyFilesList = new List<string>();
+        private readonly List<string> _rawFilesList = new List<string>();
+        private readonly List<string> _rawFilesMissingItsLossyCopies = new List<string>();
 
         public AllTheFiles(string pathParameter)
         {
@@ -25,55 +25,55 @@ namespace SpoiledFramesEliminator
         {
             var fileEntries = Directory.GetFiles(_currentPath);
 
-            foreach (var File in fileEntries)
+            foreach (var file in fileEntries)
             {
                 foreach (var rawFileExt in _rawFileExtensions)
-                    if (File.Contains(rawFileExt))
+                    if (file.Contains(rawFileExt))
                     {
-                        rawFilesList.Add(File);
-                        ActualRawExtension = rawFileExt;
+                        _rawFilesList.Add(file);
+                        _actualRawExtension = rawFileExt;
                     }
 
                 foreach (var jpegExt in _lossyFileExtensions)
-                    if (File.Contains(jpegExt))
+                    if (file.Contains(jpegExt))
                     {
-                        lossyFilesList.Add(File);
-                        ActualLossyExtension = jpegExt;
+                        _lossyFilesList.Add(file);
+                        _actualLossyExtension = jpegExt;
                     }
             }
         }
 
         public void TrimTheLists()
         {
-            for (var index = 0; index < rawFilesList.Count; index++)
-                rawFilesList[index] = rawFilesList[index].Replace(ActualRawExtension, "");
+            for (var index = 0; index < _rawFilesList.Count; index++)
+                _rawFilesList[index] = _rawFilesList[index].Replace(_actualRawExtension, "");
 
-            for (var index = 0; index < lossyFilesList.Count; index++)
-                lossyFilesList[index] = lossyFilesList[index].Replace(ActualLossyExtension, "");
+            for (var index = 0; index < _lossyFilesList.Count; index++)
+                _lossyFilesList[index] = _lossyFilesList[index].Replace(_actualLossyExtension, "");
         }
 
         public void PrintOutTestData()
         {
             Console.WriteLine("RAWs");
-            foreach (var i in rawFilesList) Console.WriteLine(i);
+            foreach (var i in _rawFilesList) Console.WriteLine(i);
             Console.WriteLine("JPEGs");
-            foreach (var i in lossyFilesList) Console.WriteLine(i);
+            foreach (var i in _lossyFilesList) Console.WriteLine(i);
         }
 
         public List<string> GetRawFilesToDelete()
         {
-            foreach (var rawFile in rawFilesList)
-                if (lossyFilesList.Contains(rawFile) == false)
-                    rawFilesMissingItsLossyCopies.Add(rawFile);
+            foreach (var rawFile in _rawFilesList)
+                if (_lossyFilesList.Contains(rawFile) == false)
+                    _rawFilesMissingItsLossyCopies.Add(rawFile);
 
-            for (var index = 0; index < rawFilesMissingItsLossyCopies.Count; index++)
-                rawFilesMissingItsLossyCopies[index] = rawFilesMissingItsLossyCopies[index]
-                    .Insert(rawFilesMissingItsLossyCopies[index].Length, ActualRawExtension);
+            for (var index = 0; index < _rawFilesMissingItsLossyCopies.Count; index++)
+                _rawFilesMissingItsLossyCopies[index] = _rawFilesMissingItsLossyCopies[index]
+                    .Insert(_rawFilesMissingItsLossyCopies[index].Length, _actualRawExtension);
 
             Console.WriteLine("RAW files to be removed:");
-            foreach (var i in rawFilesMissingItsLossyCopies) Console.WriteLine(i);
+            foreach (var i in _rawFilesMissingItsLossyCopies) Console.WriteLine(i);
 
-            return rawFilesMissingItsLossyCopies;
+            return _rawFilesMissingItsLossyCopies;
         }
     }
 }
