@@ -1,0 +1,15 @@
+uses: actions/setup-dotnet@v3.0.3
+  with:
+  dotnet-version: |
+3.1.x
+6.0.x
+- run: dotnet build
+- run: dotnet tool restore
+- run: dotnet jb cleanupcode ./SOLUTION.sln --settings="./SOLUTION.sln.DotSettings" --no-buildin-settings --exclude="./extensions**"
+- run: |
+var=$(git diff --shortstat)
+if [[ ! -z "$var" ]]
+then
+echo "Files got changed by the formatter - please run the formatter locally and commit the result!"
+exit 1
+fi
